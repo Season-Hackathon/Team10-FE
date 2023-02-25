@@ -5,6 +5,7 @@ import { Box, Typography } from "@material-ui/core";
 import ShareModal from "./ShareModal";
 import DownloadModal from "./DownloadModal";
 import Header from "./Header";
+import { Link } from "react-router-dom";
 
 class MyCard extends React.Component {
   constructor() {
@@ -49,6 +50,17 @@ class MyCard extends React.Component {
       >
         <div style={{ width: "100%" }}>
           <Header title="My page" />
+          <div
+            style={{
+              paddingBottom: "10px",
+              display: "flex",
+              justifyContent: "right",
+            }}
+          >
+            <Link to="/edit">
+              <Button align="right">EDIT</Button>
+            </Link>
+          </div>
           <Card maxW="sm" display="flex" justify="center" alignItems="center">
             <ReactCardFlip
               isFlipped={this.state.isFlipped}
