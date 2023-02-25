@@ -18,6 +18,8 @@ import {
 } from "@chakra-ui/react";
 import CategoryBlock from "../components/CategoryBlock";
 import axios from "axios";
+import SignUp from "../components/SignUp";
+import { Link } from "react-router-dom";
 
 const MakeMyProfile = () => {
   const {
@@ -282,17 +284,19 @@ const MakeMyProfile = () => {
             <Text align="center">Want to save profile?</Text>
           </ModalBody>
           <ModalFooter m="0 auto" mb="20px">
-            <Button
-              onClick={() => {
-                onCloseSaveModal();
-                saveMyProfile();
-              }}
-              mr="20px"
-              size="lg"
-              type="submit"
-            >
-              YES
-            </Button>
+            <Link to="/signup">
+              <Button
+                onClick={() => {
+                  onCloseSaveModal();
+                  saveMyProfile();
+                }}
+                mr="20px"
+                size="lg"
+                type="submit"
+              >
+                YES
+              </Button>
+            </Link>
             <Button onClick={onCloseSaveModal} size="lg">
               NO
             </Button>
